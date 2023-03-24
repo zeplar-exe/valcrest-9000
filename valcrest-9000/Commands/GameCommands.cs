@@ -9,7 +9,7 @@ public class GameCommands : ModuleBase
     [Command("minesweeper")]
     public async Task MineSweeper(int width, int height, int maxBombs)
     {
-        const int MaxSideLength = 20;
+        const int MaxSideLength = 24;
 
         if (width > MaxSideLength || height > MaxSideLength)
         {
@@ -19,24 +19,26 @@ public class GameCommands : ModuleBase
         }
 
         var bombCount = 0;
-        var message = new StringBuilder();
+        
 
         for (var x = 0; x < width; x++)
         {
+            var line = new StringBuilder();
+            
             for (var y = 0; y < height; y++)
             {
                 if (bombCount <= maxBombs && Random.Shared.NextDouble() > 0.5)
                 {
-                    message.Append("||:boom:||");
+                    line.Append("||:boom:||");
                     bombCount++;
                 }
                 else
                 {
-                    message.Append("|| ||");
+                    line.Append("||      ||");
                 }
             }
+            
+            await ReplyAsync(line.ToString());
         }
-
-        await ReplyAsync(message.ToString());
     }
 }
