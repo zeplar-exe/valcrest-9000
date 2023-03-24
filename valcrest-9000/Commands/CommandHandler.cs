@@ -52,7 +52,7 @@ public class CommandHandler
             if (guild == null)
                 return;
             
-            if (!message.HasStringPrefix(config.Prefix(guild.Id), ref argIndex))
+            if (!message.HasStringPrefix(config.Prefix(), ref argIndex))
                 return;
         }
 

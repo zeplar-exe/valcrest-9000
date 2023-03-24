@@ -9,18 +9,17 @@ public class ConfigInterface : IDisposable
 
     public ConfigInterface()
     {
-        // TODO: default json on failure
         Json = JObject.Parse(File.ReadAllText(LocalFileSystem.Config));
     }
 
-    public string Prefix(ulong guildId)
+    public string Prefix()
     {
-        return "v!";
+        return Json["prefix"]!.Value<string>()!;
     }
     
     public void Flush()
     {
-        // Json.WriteTo(new JsonTextWriter(new StreamWriter(LocalFileSystem.Config)));
+        Json.WriteTo(new JsonTextWriter(new StreamWriter(LocalFileSystem.Config)));
     }
 
     public void Dispose()
