@@ -14,7 +14,15 @@ public class RandomCommands : ModuleBase
     [Command("dice")]
     public async Task Dice(int n)
     {
-        await ReplyAsync(System.Random.Shared.Next(0, n).ToString());
+        await ReplyAsync(System.Random.Shared.Next(1, n).ToString());
+    }
+
+    [Command("cdice")]
+    public async Task CDice(string[] items)
+    {
+        var index = System.Random.Shared.Next(0, items.Length);
+
+        await ReplyAsync(items[index]);
     }
 
     [Command("8ball")]

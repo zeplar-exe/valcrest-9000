@@ -20,13 +20,19 @@ public class HelpCommands : ModuleBase
                     .WithValue("Output a number between <min> and <max>."),
                 new EmbedFieldBuilder()
                     .WithName("dice <max>")
-                    .WithValue("Output a number between 0 and <max>."),
+                    .WithValue("Output a number between 1 and <max>."),
+                new EmbedFieldBuilder()
+                    .WithName("cdice <item1, item2, item3, ...>")
+                    .WithValue("Create a custom dice and output a random item from the provided list (space-delimited)."),
                 new EmbedFieldBuilder()
                     .WithName("8ball <literally-anything>")
                     .WithValue("Yes? No? Maybe."),
                 new EmbedFieldBuilder()
                     .WithName("eval <expression>")
                     .WithValue("Output the evaluation of a methematical expression."),
+                new EmbedFieldBuilder()
+                    .WithName("minesweeper <width> <height> <maxBombs>")
+                    .WithValue("Creates a minesweeper game of <width>x<height> size with <maxBombs> bombs at most."),
                 new EmbedFieldBuilder()
                     .WithName("ping-random")
                     .WithValue("Ping a random user."),
