@@ -29,7 +29,21 @@ public class RandomCommands : ModuleBase
     [Command("8ball")]
     public async Task _8Ball([Remainder] string remainder)
     {
-        var responses = new[] { "Yes.", "No.", "Maybe." };
+        var responses = new[]
+        {
+            "Yes.",
+            "No.", 
+            "Maybe.", 
+            "Mayhaps", 
+            "Perhaps", 
+            "Possibly",
+            "Without a doubt.",
+            "Absolutely.",
+            "Of course.",
+            "Naturally.",
+            "Of course not.",
+            "Absolutely not."
+        };
         var index = System.Random.Shared.Next(0, responses.Length);
 
         await ReplyAsync(responses[index]);
