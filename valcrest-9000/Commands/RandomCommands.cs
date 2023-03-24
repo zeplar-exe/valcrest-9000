@@ -18,8 +18,9 @@ public class RandomCommands : ModuleBase
     }
 
     [Command("cdice")]
-    public async Task CDice(string[] items)
+    public async Task CDice([Remainder] string text)
     {
+        var items = text.Split(' ');
         var index = System.Random.Shared.Next(0, items.Length);
 
         await ReplyAsync(items[index]);
