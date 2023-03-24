@@ -39,10 +39,10 @@ public static class Program
             .BuildServiceProvider();
     }
     
-    private static async Task OnClientLog(LogMessage msg)
+    private static Task OnClientLog(LogMessage msg)
     {
-        using var botLogger = new BotLogger();
+        Console.WriteLine(msg.ToString());
         
-        botLogger.WriteLine(msg.Exception.ToString());
+        return Task.CompletedTask;
     }
 }
