@@ -5,5 +5,5 @@ namespace Valcrest9000;
 
 public static class Config
 {
-    public const string Prefix = "v:";
+    public const string Prefix = "v!";
 }
