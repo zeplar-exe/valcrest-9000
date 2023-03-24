@@ -27,7 +27,7 @@ public class GameCommands : ModuleBase
             
             for (var y = 0; y < height; y++)
             {
-                if (bombCount <= maxBombs && Random.Shared.NextDouble() > 0.5)
+                if (bombCount <= maxBombs && Random.Shared.NextDouble() > 0.80)
                 {
                     line.Append("||:boom:||");
                     bombCount++;
