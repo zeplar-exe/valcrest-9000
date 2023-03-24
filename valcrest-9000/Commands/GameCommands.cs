@@ -9,7 +9,7 @@ public class GameCommands : ModuleBase
     [Command("minesweeper")]
     public async Task MineSweeper(int width, int height, int maxBombs)
     {
-        const int MaxSideLength = 14;
+        const int MaxSideLength = 20;
 
         if (width > MaxSideLength || height > MaxSideLength)
         {
@@ -32,7 +32,7 @@ public class GameCommands : ModuleBase
                 }
                 else
                 {
-                    message.Append("||:white_large_square:||");
+                    message.Append("|| ||");
                 }
             }
         }
