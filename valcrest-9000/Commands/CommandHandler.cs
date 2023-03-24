@@ -44,15 +44,13 @@ public class CommandHandler
         
         if (!message.HasMentionPrefix(Client.CurrentUser, ref argIndex))
         {
-            using var config = new ConfigInterface();
-
             var channel = rawMessage.Channel as SocketGuildChannel;
             var guild = channel?.Guild;
             
             if (guild == null)
                 return;
             
-            if (!message.HasStringPrefix(config.Prefix(), ref argIndex))
+            if (!message.HasStringPrefix(Config.Prefix, ref argIndex))
                 return;
         }
 
