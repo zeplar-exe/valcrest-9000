@@ -20,4 +20,12 @@ public class BallsCommand : ModuleBase
         await ReplyAsync(
             "Zarachy Salore is a fishfucker: https://docs.google.com/document/d/1-RSf8WQxxJpmix6DX2oVIA0wN_UN75NY9K_GsdC4Dkg");
     }
+    
+    [Command("java")]
+    [RequireRole(853369121000521780)]
+    public async Task JAVA()
+    {
+        await ReplyAsync(
+            "I think we can all agree that Java fucking sucks. C# is so much better.");
+    }
 }
